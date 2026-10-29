@@ -501,7 +501,7 @@
 
         <footer>
             <div style="font-weight: 800; color: #cbd5e0; margin-bottom: 5px;">KIỂM TRA GIỮA HỌC KÌ 1 NĂM HỌC 2026-2027</div>
-            <div style="font-size: 0.85rem;">Bản quyền thuộc về Trường THCS Thủy Phương, Thành phố Huế</div>
+            <div style="font-size: 0.85rem;">Bản quyền thuộc về Thạc sĩ Nguyễn Văn Cần, Trường THCS Thanh Thủy, Thành phố Huế</div>
         </footer>
     </div>
 </div>
@@ -1264,7 +1264,7 @@ document.getElementById('btn-ar-retry').onclick = () => {
 
 // EXCEL IMPORT & EXPORT
 document.getElementById('btn-download-template').onclick = () => {
-    const templateData = [{ "STT": 1, "Họ và Tên": "Nguyễn Văn A", "Lớp": "7/1", "SBD": "01", "Trường": "THCS Thủy Phương" }, { "STT": 2, "Họ và Tên": "Trần Thị B", "Lớp": "7/2", "SBD": "02", "Trường": "THCS Thủy Phương" }];
+    const templateData = [{ "STT": 1, "Họ và Tên": "Nguyễn Văn A", "Lớp": "7/1", "SBD": "01", "Trường": "THCS Thanh Thủy" }, { "STT": 2, "Họ và Tên": "Trần Thị B", "Lớp": "7/2", "SBD": "02", "Trường": "THCS Thanh Thủy" }];
     const ws = XLSX.utils.json_to_sheet(templateData);
     ws['!cols'] = [{wch: 5}, {wch: 30}, {wch: 10}, {wch: 10}, {wch: 30}];
     const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, "DanhSachHocSinh");
@@ -1302,7 +1302,7 @@ document.getElementById('file-import-students').onchange = (e) => {
                 let name = (row["Họ và Tên"] || row["Họ tên"] || row["Name"] || "").toString().trim();
                 let cls = (row["Lớp"] || row["Class"] || "").toString().trim();
                 let sbd = (row["SBD"] || row["Số báo danh"] || "").toString().trim();
-                let sch = (row["Trường"] || row["School"] || "THCS Thủy Phương").toString().trim();
+                let sch = (row["Trường"] || row["School"] || "THCS Thanh Thủy").toString().trim();
                 if(name) {
                     let isDupDB = globalStudentList.some(s => s.name === name && s.class === cls && s.school === sch);
                     let isDupCache = importedStudentsCache.some(s => s.name === name && s.class === cls && s.school === sch);
